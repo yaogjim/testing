@@ -1,0 +1,44 @@
+<% include header.ejs %>
+<%
+if(message && message!='')
+{
+%>
+<div class="alert alert-warning"><%= message %></div>
+<%
+}
+%>
+<h1>圣诞夜抽奖啦！</h1>
+<div class="media" id="media">
+<img src="http://suryawechatpub.herokuapp.com/images/mr.jpg" data-src="http://suryawechatpub.herokuapp.com/images/mr.jpg">
+</div>
+<div class="text">                                
+<p>圣诞夜抽奖活动中，随抽随中，每个小时都有机会。</p><p>发送自己的编号给小伙伴，立刻增加一次机会。</p>            
+</div>
+<%
+if(lottCount==0)
+{
+%>
+<div class="alert alert-info">
+<p>您已抽奖，请在下一个时段继续尝试。</p>
+<p>@您的好友，立刻获得抽奖机会。</p>
+</div>
+<%
+}
+else
+{
+%>
+<p>当前您有：<%= lottCount %>次抽奖机会</p>
+<div class="col-md-12 column">
+ <button type="button" class="btn btn-default" onClick="window.location.href='./lottery.html'">点击开始抽奖吧</button>
+</div>
+<%
+}
+%>
+
+<div >
+<p>-------------------------------------</p>
+<p>以下是后台测试信息：</p>
+<p>用户id：<%= userId %></p>
+<p>可用抽奖次数：<%= lottCount %></p>
+</div>
+<% include footer.ejs %>
