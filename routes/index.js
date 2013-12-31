@@ -55,7 +55,7 @@ exports.index = function(req, res){
     if (weixin.checkSignature(req)) {
 		res.send(200, req.query.echostr);
     } else {
-    	var titleInfo='微信测试平台......';
+    	var titleInfo='微信测试平台 addby dev......';
         res.render('index', { title: titleInfo });
     }  
 };
